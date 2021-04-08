@@ -1,77 +1,68 @@
-# #Backend Calculadora
-Backend simples para funcionamento de uma calculadora em node js utilizando type script.
+# #Api de Pagamentos
+Backend simples para funcionamento de uma apí de pagamentos em node js.
 
 ## Rotas
-- `GET /soma`: Responsável pela soma
+
+- `POST /api/debito`: Responsável pela criação de salvar um método de pagamento em débito
 ```js
-// Request(Query):
+// Request(Body):
 {
-  numeroAtual: 0,
-  numeroDigitado: 0
+  dia: "01"
+  mes: "01"
+  ano: "2021"
+  valor: "22.50"
+  tipo_pagamento: "Débito"
 }
 // Response: StatusCode: 200 (OK)
 {
-  resultado: 0
-}
+  "valor": 22.5,
+  "tipo_pagamento": "Crédito",
+  "dia": "05",
+  "mes": "04",
+  "ano": "2021"
+ }
 ```
 
-- `GET /sub`: Responsável pela subtração
+- `POST /api/credito`: Responsável pela criação de salvar um método de pagamento em crédito
 ```js
-// Request(Query):
+// Request(Body):
 {
-  numeroAtual: 0,
-  numeroDigitado: 0
+  dia: "01"
+  mes: "01"
+  ano: "2021"
+  valor: "22.50"
+  tipo_pagamento: "Crédito"
 }
 // Response: StatusCode: 200 (OK)
 {
-  resultado: 0
-}
-```
-
-- `GET /div`: Responsável pela divisão
-```js
-// Request(Query):
-{
-  numeroAtual: 0,
-  numeroDigitado: 0
-}
-// Response: StatusCode: 200 (OK)
-{
-  resultado: 0
-}
+  "valor": 22.5,
+  "tipo_pagamento": "Crédito",
+  "dia": "05",
+  "mes": "04",
+  "ano": "2021"
+ }
 ```
 
 - `GET /mult`: Responsável pela multiplicação
 ```js
 // Request(Query):
 {
-  numeroAtual: 0,
-  numeroDigitado: 0
+  ano: "2021,
+  mes: "04"
 }
 // Response: StatusCode: 200 (OK)
 {
-  resultado: 0
-}
-```
-
-## Logs
-Toda requisição feita gera um log que fica disponível no diretorio: src/utils/logs/info.log
-```js
-// Estrutura gerada do log
 {
-  level: 'info',
-  rota: '',
-  message: '',
-  service: 'Calculadora'
+  "saldo_credito": 0,
+  "saldo_debito": 0
 }
 ```
-
 
 ## Execução
 Para executar o projeto use:(Projeto rodando na porta http://localhost:3333)
 ```js
 npm install
-npm run start
+npm run dev
 ```
 Para executar os testes use:
 ```js
