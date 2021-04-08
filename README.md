@@ -7,4 +7,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Node.js
 
 🚧 Backend
-Para ver a documentação e outras informações sobre o backend ver README da pasta 📁backend
+Para ver a documentação e outras informações sobre o backend ver README da pasta 📁src
